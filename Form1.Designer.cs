@@ -50,6 +50,7 @@
             this.btnReverse.TabIndex = 1;
             this.btnReverse.Text = "Reverse Plays";
             this.btnReverse.UseVisualStyleBackColor = true;
+            this.btnReverse.Click += new System.EventHandler(this.btnReverse_Click);
             // 
             // lblStatus
             // 

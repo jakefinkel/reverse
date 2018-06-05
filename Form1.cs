@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace reverse
 {
@@ -15,6 +9,19 @@ namespace reverse
         public Reverse()
         {
             InitializeComponent();
+        }
+
+        private void btnReverse_Click(object sender, EventArgs e)
+        {
+            lblStatus.Text = "Processing...";
+            if (String.IsNullOrWhiteSpace(txtPlays.Text))
+            {
+                lblStatus.Text = "Please paste in valid input";
+                return;
+            }
+            var lines = txtPlays.Text.Split('\n');
+            txtPlays.Text = lines.Aggregate((line, next) =>next + "\r\n" + line);
+            lblStatus.Text = "Sorted!";
         }
     }
 }
