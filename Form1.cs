@@ -21,6 +21,8 @@ namespace reverse
             }
             var lines = txtPlays.Text.Split('\n');
             txtPlays.Text = lines.Aggregate((line, next) =>next + "\r\n" + line);
+            txtPlays.SelectAll();
+            txtPlays.Copy();
             lblStatus.Text = "Sorted!";
         }
     }
